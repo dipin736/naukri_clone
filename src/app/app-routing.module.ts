@@ -8,7 +8,7 @@ import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { JobListingComponent } from './pages/job-listing/job-listing.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'full',component:HomeComponent},
+  {path:'',redirectTo:'home',pathMatch:'full'},
 
   {path:'home',component:HomeComponent},
 

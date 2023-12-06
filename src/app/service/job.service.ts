@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class JobService {
 
-  constructor() { }
+  apiEndPoint="https://freeapi.miniprojectideas.com/api/JobPortal/"  
+  
+  constructor(private  http:HttpClient) { }
+
+
+  registerEmployer(obj:any){
+    return this.http.post(this.apiEndPoint+ 'AddNewEmployer',obj)
+  }
+  registerJobSeeker(obj:any){
+    return this.http.post(this.apiEndPoint+ 'AddNewJobSeeker',obj)
+  }
+
+  login(obj:any){
+    return this.http.post(this.apiEndPoint+ 'Login',obj)
+  }
 }

@@ -11,7 +11,8 @@ import { JobListingComponent } from './pages/job-listing/job-listing.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateNewJobComponent } from './pages/create-new-job/create-new-job.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { CreateNewJobComponent } from './pages/create-new-job/create-new-job.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

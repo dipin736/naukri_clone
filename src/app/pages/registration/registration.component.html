@@ -1,1 +1,139 @@
-<p>registration works!</p>
+<section class="h-100 bg-light">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4 d-flex h-100">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                alt="Sample photo" class="img-fluid h-100" style="
+                                  border-top-left-radius: 0.25rem;
+                                  border-bottom-left-radius: 0.25rem;
+                                " />
+                        </div>
+                        <div class="col-xl-6 p-3">
+                            <h1 class="m-3">Registration</h1>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="btn-group">
+                                    <button type="button" (click)="isJobSeeker=true" class="btn btn-lg ms-1" [ngClass]="isJobSeeker ? 'btn-success': 'btn-primary'">Are you a Job Seeker</button>
+                                    <button type="button" (click)="isJobSeeker=false" class="btn btn-lg ms-1" [ngClass]="!isJobSeeker ? 'btn-success': 'btn-primary'">Register As An Employee</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="isJobSeeker">
+                                <div class="card-body p-md-5 text-black">
+                                    <!-- Your form fields here -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="FullName" [(ngModel)]="jobSeekerObj.FullName" name="FullName" class="form-control form-control-lg" />
+                                        <label class="form-label" for="FullName">Full Name</label>
+                                    </div>
+    
+                                    <div class="row mb-6">
+                                        <div class="col-md-6">
+                                            <input type="text" id="EmailId" [(ngModel)]="jobSeekerObj.EmailId" name="EmailId" class="form-control form-control-lg" />
+                                            <label class="form-label" for="EmailId">Email ID</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" id="MobileNo" [(ngModel)]="jobSeekerObj.MobileNo" name="MobileNo" class="form-control form-control-lg" />
+                                            <label class="form-label" for="MobileNo">Mobile Number</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-outline mb-4">
+                                        <div class="col-md-12">
+                                            <select name="ExperienceStatus" id="ExperienceStatus" [(ngModel)]="jobSeekerObj.ExperienceStatus" class="form-control form-control-lg">
+                                                <option value="" selected disabled>Select Experience Status</option>
+                                                <option value="Fresher">Fresher</option>
+                                                <option value="Experince">Experienced</option>
+                                            </select>
+                                            <label class="form-label" for="ExperienceStatus">Experience Status</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="ResumeUrl" [(ngModel)]="jobSeekerObj.ResumeUrl" name="ResumeUrl" class="form-control form-control-lg" />
+                                        <label class="form-label" for="ResumeUrl">Resume Url</label>
+                                    </div>
+                                    <div class="d-grid gap-2 pt-3 pb-5">
+                                        <button type="button" (click)="registerJobSeeker()" class="btn btn-warning btn-block ms-2">
+                                            Submit form
+                                        </button>                                  
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="!isJobSeeker">
+                                <div class="card-body p-md-5 text-black">
+                                    <!-- Your form fields here -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="FullName" [(ngModel)]="employerObj.CompanyName" name="CompanyName" class="form-control form-control-lg" />
+                                        <label class="form-label" for="FullName">Full Name</label>
+                                    </div>
+    
+                                    <div class="row mb-4">
+                                        <div class="col-md-4">
+                                            <input type="text" id="EmailId" [(ngModel)]="employerObj.EmailId" name="EmailId" class="form-control form-control-lg" />
+                                            <label class="form-label" for="EmailId">Email ID</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" id="MobileNo" [(ngModel)]="employerObj.MobileNo" name="MobileNo" class="form-control form-control-lg" />
+                                            <label class="form-label" for="MobileNo">Mobile Number</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" id="PhoneNo" [(ngModel)]="employerObj.PhoneNo" name="PhoneNo" class="form-control form-control-lg" />
+                                            <label class="form-label" for="PhoneNo">Phone Number</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row mb-4">
+                                        <div class="col-md-6">
+                                            <input type="text" id="GstNo" [(ngModel)]="employerObj.GstNo" name="GstNo" class="form-control form-control-lg" />
+                                            <label class="form-label" for="GstNo">GST Number</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" id="LogoURL" [(ngModel)]="employerObj.LogoURL" name="LogoURL" class="form-control form-control-lg" />
+                                            <label class="form-label" for="LogoURL">Logo URL</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row mb-4">
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="City" [(ngModel)]="employerObj.City" name="City" class="form-control form-control-lg" />
+                                                <label class="form-label" for="City">City</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="State" [(ngModel)]="employerObj.State" name="State" class="form-control form-control-lg" />
+                                                <label class="form-label" for="State">State</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="text" id="PinCode" [(ngModel)]="employerObj.PinCode" name="PinCode" class="form-control form-control-lg" />
+                                                <label class="form-label" for="PinCode">Pincode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-outline mn-4">
+                                        <textarea class="form-control" [(ngModel)]="employerObj.CompanyAddress" name="CompanyAddress" id="Address" rows="6"></textarea>
+                                        <label class="form-label" for="Address">Address</label>
+                                    </div>
+    
+                                    <div class="d-grid gap-2 pt-3 pb-5">
+                                        <button type="button" (click)="register()" class="btn btn-warning btn-block ms-2">
+                                            Submit form
+                                        </button>                                  
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
