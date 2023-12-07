@@ -6,6 +6,7 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { JobListingComponent } from './pages/job-listing/job-listing.component';
+import { CreateNewJobComponent } from './pages/create-new-job/create-new-job.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -18,7 +19,10 @@ const routes: Routes = [
 
   {path:'jobs',component:JobsComponent},
 
-  {path:'job-details',component:JobDetailsComponent},
+  {path:'new-job',component:CreateNewJobComponent},
+
+
+  {path:'job-details/:jobid',component:JobDetailsComponent},
 
   {path:'job-listing',component:JobListingComponent},
 

@@ -19,7 +19,9 @@
               <li class="nav-item">
                   <a class="nav-link" href="#">Services</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="userInfo.userRole=='Employer'" routerLink="/new-job">Create a New Job</a>
+            </li>
           </ul>
           <form class="">
               <button *ngIf="!isLoggedIn" class="btn btn-outline-primary round-button mx-2" type="button" routerLink="login">Login</button>
