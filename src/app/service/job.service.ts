@@ -37,4 +37,12 @@ export class JobService {
   GetJobListingById(jobid:number){
     return this.http.get(this.apiEndPoint+ 'GetJobListingById?jobId='+ jobid)
   }
+
+  SendJobApplication(obj:any){
+    return this.http.post(this.apiEndPoint+ 'SendJobApplication',obj)
+  }
+
+  GetJobsByEmployerId(employerid:number){
+    return this.http.get(this.apiEndPoint+ 'GetJobsByEmployerId?employerid=' + employerid)
+  }
 }

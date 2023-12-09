@@ -7,10 +7,26 @@ import { JobService } from 'src/app/service/job.service';
   styleUrls: ['./job-listing.component.css']
 })
 export class JobListingComponent implements OnInit {
-
-  constructor(private job:JobService){}
-
+  userInfo: any;
+  jobList:any[]=[]
+  
   ngOnInit(): void {
     
   }
+
+  constructor(private job:JobService){
+    const userData = localStorage.getItem('JobLoginUser');
+    console.log('JobLoginUser from localStorage:', userData);
+    if (userData !== null) {
+      this.userInfo = JSON.parse(userData)
+      this.GetJobsByEmployer()
+    } 
+  }
+
+  GetJobsByEmployer(){
+    this.job.GetJobsByEmployerId(this.userInfo.employerId).subscribe((res:any)=>{
+      this.jobList=res.data;
+    })
+  }
+
 }
