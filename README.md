@@ -1,27 +1,33 @@
 # NaukriClone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+# Job Portal Application (Naukri Clone) - Angular Project
 
-## Development server
+Welcome to the Job Portal Application, an Angular project that replicates the features of popular job portals like Naukri.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Overview
 
-## Code scaffolding
+This project was developed using Angular and TypeScript to create a user-friendly job portal application. It allows users to explore job listings, view job details, and apply for jobs.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- User authentication and authorization for job seekers and employers.
+- Responsive design for optimal user experience on various devices.
+- Job listing pages to view available positions.
+- Job details pages providing in-depth information about each job.
+- User-friendly application process for job seekers.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- Angular
+- TypeScript
+- HTML
+- CSS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started
 
-## Running end-to-end tests
+To get started with the project, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
